@@ -56,7 +56,8 @@ public class ChartController {
         @Override
         public void accept(StockPrice stockPrice) {
             Platform.runLater(() -> {
-                seriesData.add( new XYChart.Data<>( String.valueOf(stockPrice.getTime().getSecond()), stockPrice.getPrice()));
+//                seriesData.add( new XYChart.Data<>( String.valueOf(stockPrice.getTime().getMinute()), stockPrice.getPrice()));
+                seriesData.add( new XYChart.Data<>( String.valueOf(System.currentTimeMillis()), stockPrice.getPrice()));
             });
         }
 
